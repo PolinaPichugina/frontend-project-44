@@ -13,9 +13,11 @@ const brainGames = (rule, getQuestionAndAnswer) => {
     if (answer === correctAnswer.toString()) {
       console.log('Correct!');
     } else {
-      return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n Let's try again, ${name}!`);
+      const wrongAnswer = console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n Let's try again, ${name}!`);
+      return wrongAnswer;
     }
-  } console.log(`Congratulations, ${name}!`);
-  return;
+  }
+  const end = console.log(`Congratulations, ${name}!`);
+  return end;
 };
 export default brainGames;
