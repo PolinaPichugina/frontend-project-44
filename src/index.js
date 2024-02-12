@@ -16,5 +16,6 @@ const brainGames = (rule, getQuestionAndAnswer) => {
       return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n Let's try again, ${name}!`);
     }
   } console.log(`Congratulations, ${name}!`);
+  return;
 };
 export default brainGames;
