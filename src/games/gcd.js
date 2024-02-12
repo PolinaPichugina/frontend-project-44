@@ -8,7 +8,7 @@ const getQuestionAndAnswer = () => {
   const question = `${a} ${b}`;
   let correctAnswer = 1;
   for (let i = 2; i < ((a < b) ? a : b); i += 1) {
-    if ((a / 2) % i === 0 && (b / 2) % i === 0) {
+    if (a % i === 0 && (b / 2) % i === 0) {
       correctAnswer = i;
     }
   } return [question, correctAnswer];
