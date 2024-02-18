@@ -2,7 +2,7 @@ import brainGames from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
 const getGcd = (a, b) => {
-  let gcd;
+  let gcd = 1;
   for (let divider = 2; divider < Math.min(a, b); divider += 1) {
     if (a % divider === 0 && b % divider === 0) {
       gcd = divider;
