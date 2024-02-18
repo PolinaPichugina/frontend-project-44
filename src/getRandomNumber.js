@@ -1,5 +1,5 @@
-const getRandomNumber = () => {
-  const number = Math.floor(Math.random() * 1000);
+const getRandomNumber = (size) => {
+  const number = Math.floor(Math.random() * size);
   return number;
 };
 export default getRandomNumber;

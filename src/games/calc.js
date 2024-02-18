@@ -3,10 +3,10 @@ import brainGames from '../index.js';
 
 const getQuestionAndAnswer = () => {
   const arrayOfOperators = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * 3);
+  const randomIndex = getRandomNumber(3);
   const randomOperator = arrayOfOperators[randomIndex];
-  const a = getRandomNumber();
-  const b = getRandomNumber();
+  const a = getRandomNumber(100);
+  const b = getRandomNumber(100);
   let question = '';
   let correctAnswer;
   switch (randomOperator) {
@@ -17,7 +17,7 @@ const getQuestionAndAnswer = () => {
     case '*': correctAnswer = a * b; question = `${a} * ${b}`;
       break;
     default:
-      question = null;
+      throw new Error(`Unknown order state: '${randomOperator}'!`);
   } return [question, correctAnswer];
 };
 const rule = 'What is the result of the expression?';

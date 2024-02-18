@@ -8,7 +8,7 @@ const isEven = (number) => {
 };
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 const getQuestionAndAnswer = () => {
-  const question = getRandomNumber();
+  const question = getRandomNumber(100);
   let correctAnswer = '';
   if (isEven(question)) {
     correctAnswer = 'yes';

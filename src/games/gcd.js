@@ -1,17 +1,21 @@
 import brainGames from '../index.js';
 import getRandomNumber from '../getRandomNumber.js';
 
+const getGcd = (a, b) => {
+  let gcd;
+  for (let divider = 2; divider < Math.min(a, b); divider += 1) {
+    if (a % divider === 0 && b % divider === 0) {
+      gcd = divider;
+    }
+  } return gcd;
+};
 const rule = 'Find the greatest common divisor of given numbers.';
 const getQuestionAndAnswer = () => {
-  const a = getRandomNumber();
-  const b = getRandomNumber();
+  const a = getRandomNumber(100);
+  const b = getRandomNumber(100);
   const question = `${a} ${b}`;
-  let correctAnswer = 1;
-  for (let i = 2; i < ((a < b) ? a : b); i += 1) {
-    if (a % i === 0 && b % i === 0) {
-      correctAnswer = i;
-    }
-  } return [question, correctAnswer];
+  const correctAnswer = getGcd(a, b);
+  return [question, correctAnswer];
 };
 const gcd = () => {
   brainGames(rule, getQuestionAndAnswer);
