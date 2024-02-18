@@ -6,18 +6,17 @@ const brainGames = (rule, getQuestionAndAnswer) => {
   const greeting = `Hello, ${name}!`;
   console.log(greeting);
   console.log(rule);
-  for (let i = 0; i < 3; i += 1) {
+  const countQuestions = 3;
+  for (let i = 0; i < countQuestions; i += 1) {
     const [question, correctAnswer] = getQuestionAndAnswer();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === correctAnswer.toString()) {
-      console.log('Correct!');
-    } else {
+    if (answer !== correctAnswer.toString()) {
       const wrongAnswer = console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \n Let's try again, ${name}!`);
       return wrongAnswer;
     }
+    console.log('Correct!');
   }
-  const end = console.log(`Congratulations, ${name}!`);
-  return end;
+  console.log(`Congratulations, ${name}!`);
 };
 export default brainGames;
