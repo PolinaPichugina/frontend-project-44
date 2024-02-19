@@ -6,6 +6,8 @@ const getGcd = (a, b) => {
   for (let divider = 2; divider < Math.min(a, b); divider += 1) {
     if (a % divider === 0 && b % divider === 0) {
       gcd = divider;
+    } else if (a === 0 || b === 0) {
+      return a === 0 ? b : a;
     }
   } return gcd;
 };
