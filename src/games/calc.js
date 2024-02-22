@@ -17,7 +17,7 @@ const getQuestionAndAnswer = () => {
     case '*': correctAnswer = a * b; question = `${a} * ${b}`;
       break;
     default:
-      throw new Error(`Unknown order state: '${randomOperator}'!`);
+      throw new Error(`Unknown operator: '${randomOperator}'!`);
   } return [question, correctAnswer];
 };
 const rule = 'What is the result of the expression?';

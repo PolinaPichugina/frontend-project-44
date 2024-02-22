@@ -12,10 +12,11 @@ const generateSequence = (firstElement, length, step) => {
 };
 const rule = 'What number is missing in the progression?';
 const getQuestionAndAnswer = () => {
-  const arrayOfElement = generateSequence(getRandomNumber(100), 10, getRandomNumber(100));
-  const randomIndex = getRandomNumber(10);
-  const correctAnswer = arrayOfElement[randomIndex];
-  const array = [...arrayOfElement];
+  const seqLength = 10;
+  const maxNumber = 100;
+  const array = generateSequence(getRandomNumber(maxNumber), seqLength, getRandomNumber(maxNumber));
+  const randomIndex = getRandomNumber(seqLength);
+  const correctAnswer = array[randomIndex];
   array[randomIndex] = '..';
   const question = array.join(' ');
   return [question, correctAnswer];
